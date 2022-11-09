@@ -8,7 +8,7 @@
     <title>HOW-OLD-IS</title>
 
     <link href="library/css/output.css" rel="stylesheet" />
-
+    <script src="../node_modules/flowbite/dist/flowbite.js"></script>
 </head>
 
 <body>
