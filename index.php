@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOW-OLD-IS</title>
 
-    <link rel="stylesheet" href="library/css/bootstrap.min.css">
-    <script src="library/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="library/plugin/bootstrap/css/bootstrap.min.css">
+
+    <script src="library/plugin/bootstrap/js/bootstrap.bundle.min.js"></script>
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
