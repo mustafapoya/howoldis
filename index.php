@@ -7,5 +7,14 @@
     <title>PHP Website</title>
 </head>
 <body>
+    <?php
+        $db = new SQLite3('tech_db.db');
+        $results = $db->query('SELECT tech_name FROM technologies');
+
+        while ($row = $results->fetchArray()) {
+            print($row['tech_name']);
+            print("<br/>");
+        }
+    ?>
 </body>
 </html>
