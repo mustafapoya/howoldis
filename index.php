@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="library/plugin/font-awesome/css/fontawesome.min.css" />
     <link rel="stylesheet" href="library/plugin/font-awesome/css/brands.min.css" />
     <link rel="stylesheet" href="library/plugin/font-awesome/css/solid.min.css" />
+    <link rel="stylesheet" href="library/plugin/devicon/devicon.min.css" />
 
     <link rel="stylesheet" href="library/css/style.css" />
 
@@ -55,6 +56,8 @@
             <div class="row">
                 <div class="col col-lg-12">
                     Something
+                    <i class="devicon-adonisjs-original"></i>
+                    <i class="devicon-adonisjs-original colored"></i>
                 </div>
             </div>
         </div>
