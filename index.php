@@ -54,7 +54,7 @@
     <main>
         <?php
             $db = new SQLite3('tech_db.db');
-            $results = $db->query('SELECT `tech_name`, `start_date`, `link` FROM technologies');
+            $results = $db->query('SELECT `icon`, `tech_name`, `start_date`, `link` FROM technologies');
             // while ($row = $results->fetchArray()) {
             //     print($row['tech_name']);
             //     print("<br/>");
@@ -66,7 +66,14 @@
                     <div class="list-group w-auto">
                         <?php while ($row = $results->fetchArray()) { ?>
                         <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-                            <span class="devicon-adonisjs-original colored rounded-circle flex-shrink-0" style="width: 40px; height: 40px; font-size: 40px;"></span>
+                            <?php
+                                $icon = $row['icon'];
+
+                                if($icon == '') {
+                                    $icon = "fa-solid fa-code";
+                                }
+                            ?>
+                            <span class="<?php echo $icon ?> colored rounded-circle flex-shrink-0" style="width: 40px; height: 40px; font-size: 40px;"></span>
                             <div class="d-flex gap-2 w-100 justify-content-between">
                                 <div>
                                     <h6 class="mb-0"><?php echo $row['tech_name'] ?></h6>
