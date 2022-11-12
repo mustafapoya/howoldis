@@ -70,7 +70,14 @@
                             <div class="d-flex gap-2 w-100 justify-content-between">
                                 <div>
                                     <h6 class="mb-0"><?php echo $row['tech_name'] ?></h6>
+                                    <p class="mb-0 opacity-75">Release Data: <span class="fa fa-calendar"></span> <b><?php echo $row['start_date'] ?></b></p>
                                 </div>
+                                <?php
+                                    $start_date   = new DateTime($row['start_date']);
+                                    $current_date = new DateTime();
+                                    $date_diff    = $start_date->diff($current_date);
+                                ?>
+                                <small class="opacity-50 text-nowrap"><?php print($date_diff->y . ' year ' . $date_diff->m . ' months') ?></small>
                             </div>
                         </a>
                         <?php } ?>
