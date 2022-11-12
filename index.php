@@ -65,19 +65,23 @@
                 <div class="col col-lg-12">
                     <div class="list-group w-auto">
                         <?php while ($row = $results->fetchArray()) { ?>
-                        <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                        <a href="<?php echo $row['link']; ?>" target="_blank" class="list-group-item list-group-item-action d-flex gap-3 py-3" 
+                            aria-current="true">
+                            
                             <?php
                                 $icon = $row['icon'];
 
                                 if($icon == '') {
-                                    $icon = "fa-solid fa-code";
+                                    $icon = "fa-regular fa-code";
                                 }
                             ?>
                             <span class="<?php echo $icon ?> colored rounded-circle flex-shrink-0" style="width: 40px; height: 40px; font-size: 40px;"></span>
                             <div class="d-flex gap-2 w-100 justify-content-between">
                                 <div>
                                     <h6 class="mb-0"><?php echo $row['tech_name'] ?></h6>
-                                    <p class="mb-0 opacity-75">Release Data: <span class="fa fa-calendar"></span> <b><?php echo $row['start_date'] ?></b></p>
+                                    <p class="mb-0 opacity-80" style="margin-top: 2px;">
+                                        Release Data: <span class="fa-regular fa-calendar"></span> <b><?php echo $row['start_date'] ?></b>
+                                    </p>
                                 </div>
                                 <?php
                                     $start_date   = new DateTime($row['start_date']);
