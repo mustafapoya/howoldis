@@ -1,5 +1,8 @@
-# howoldis
-How Old is a technology
+# HOW OLD IS
+This project is a tool for recruiters to check how old a technology is.
 
-# Buil tailwind file
-`npx tailwindcss -i ./src/library/css/style.css -o ./src/library/css/output.css --watch`
+# Running the project
+If you are using **WAMP** you can copy this project in www directory and navigate through browser to `localhost/howoldis` and view the project.
+
+Data of this project is stored in a **SQlite** database and you can use the **DB-Brower** software to access database.
+
