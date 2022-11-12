@@ -53,44 +53,51 @@
     </header>
     <main>
         <?php
-            $db = new SQLite3('tech_db.db');
-            $results = $db->query('SELECT `icon`, `tech_name`, `start_date`, `link` FROM technologies');
-            // while ($row = $results->fetchArray()) {
-            //     print($row['tech_name']);
-            //     print("<br/>");
-            // }
+        $db = new SQLite3('tech_db.db');
+        $results = $db->query('SELECT `icon`, `tech_name`, `start_date`, `link` FROM technologies');
+        // while ($row = $results->fetchArray()) {
+        //     print($row['tech_name']);
+        //     print("<br/>");
+        // }
         ?>
         <div class="container">
             <div class="row" style="margin-top: 20px;">
                 <div class="col col-lg-12">
+                    <div class="input-box">
+                        <input type="text" class="form-control">
+                        <i class="fa fa-search"></i>                  
+                  </div>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+                <div class="col col-lg-12">
                     <div class="list-group w-auto">
                         <?php while ($row = $results->fetchArray()) { ?>
-                        <a href="<?php echo $row['link']; ?>" target="_blank" class="list-group-item list-group-item-action d-flex gap-3 py-3" 
-                            aria-current="true">
-                            
-                            <?php
+                            <a href="<?php echo $row['link']; ?>" target="_blank" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+
+                                <?php
                                 $icon = $row['icon'];
 
-                                if($icon == '') {
+                                if ($icon == '') {
                                     $icon = "fa-regular fa-code";
                                 }
-                            ?>
-                            <span class="<?php echo $icon ?> colored rounded-circle flex-shrink-0" style="width: 40px; height: 40px; font-size: 40px;"></span>
-                            <div class="d-flex gap-2 w-100 justify-content-between">
-                                <div>
-                                    <h6 class="mb-0"><?php echo $row['tech_name'] ?></h6>
-                                    <p class="mb-0 opacity-80" style="margin-top: 2px;">
-                                        Release Data: <span class="fa-regular fa-calendar"></span> <b><?php echo $row['start_date'] ?></b>
-                                    </p>
-                                </div>
-                                <?php
+                                ?>
+                                <span class="<?php echo $icon ?> colored rounded-circle flex-shrink-0" style="width: 40px; height: 40px; font-size: 40px;"></span>
+                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                    <div>
+                                        <h6 class="mb-0"><?php echo $row['tech_name'] ?></h6>
+                                        <p class="mb-0 opacity-80" style="margin-top: 2px;">
+                                            Release Data: <span class="fa-regular fa-calendar"></span> <b><?php echo $row['start_date'] ?></b>
+                                        </p>
+                                    </div>
+                                    <?php
                                     $start_date   = new DateTime($row['start_date']);
                                     $current_date = new DateTime();
                                     $date_diff    = $start_date->diff($current_date);
-                                ?>
-                                <small class="opacity-50 text-nowrap"><?php print($date_diff->y . ' year ' . $date_diff->m . ' months') ?></small>
-                            </div>
-                        </a>
+                                    ?>
+                                    <small class="opacity-50 text-nowrap"><?php print($date_diff->y . ' year ' . $date_diff->m . ' months') ?></small>
+                                </div>
+                            </a>
                         <?php } ?>
                     </div>
                 </div>
