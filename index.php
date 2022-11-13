@@ -25,7 +25,7 @@
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                         <img src="library/img/golbarg.png" class="bi me-2" alt="golbarg logo" style="width: 34px; height: 34px;">
-                        Golbarg.net
+                        Golbarg.net  
                     </a>
                     <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                         <li>
@@ -64,40 +64,41 @@
             <div class="row" style="margin-top: 20px;">
                 <div class="col col-lg-12">
                     <div class="input-box">
-                        <input type="text" class="form-control">
+                        <input id="input-search" type="text" class="form-control" placeholder="Search technology">
                         <i class="fa fa-search"></i>                  
                   </div>
                 </div>
             </div>
             <div class="row" style="margin-top: 10px;">
                 <div class="col col-lg-12">
-                    <div class="list-group w-auto">
+                    <div class="list-group w-auto tech-list">
                         <?php while ($row = $results->fetchArray()) { ?>
-                            <a href="<?php echo $row['link']; ?>" target="_blank" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
-
-                                <?php
-                                $icon = $row['icon'];
-
-                                if ($icon == '') {
-                                    $icon = "fa-regular fa-code";
-                                }
-                                ?>
-                                <span class="<?php echo $icon ?> colored rounded-circle flex-shrink-0" style="width: 40px; height: 40px; font-size: 40px;"></span>
-                                <div class="d-flex gap-2 w-100 justify-content-between">
-                                    <div>
-                                        <h6 class="mb-0"><?php echo $row['tech_name'] ?></h6>
-                                        <p class="mb-0 opacity-80" style="margin-top: 2px;">
-                                            Release Data: <span class="fa-regular fa-calendar"></span> <b><?php echo $row['start_date'] ?></b>
-                                        </p>
-                                    </div>
+                            <div class="tech-item" tech-name="<?php echo $row['tech_name'] ?>">
+                                <a href="<?php echo $row['link']; ?>" target="_blank" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
                                     <?php
-                                    $start_date   = new DateTime($row['start_date']);
-                                    $current_date = new DateTime();
-                                    $date_diff    = $start_date->diff($current_date);
+                                        $icon = $row['icon'];
+
+                                        if ($icon == '') {
+                                            $icon = "fa-regular fa-code";
+                                        }
                                     ?>
-                                    <small class="opacity-50 text-nowrap"><?php print($date_diff->y . ' year ' . $date_diff->m . ' months') ?></small>
-                                </div>
-                            </a>
+                                    <span class="<?php echo $icon ?> colored rounded-circle flex-shrink-0" style="width: 40px; height: 40px; font-size: 40px;"></span>
+                                    <div class="d-flex gap-2 w-100 justify-content-between">
+                                        <div>
+                                            <h6 class="mb-0"><?php echo $row['tech_name'] ?></h6>
+                                            <p class="mb-0 opacity-80" style="margin-top: 2px;">
+                                                Release Data: <span class="fa-regular fa-calendar"></span> <b><?php echo $row['start_date'] ?></b>
+                                            </p>
+                                        </div>
+                                        <?php
+                                        $start_date   = new DateTime($row['start_date']);
+                                        $current_date = new DateTime();
+                                        $date_diff    = $start_date->diff($current_date);
+                                        ?>
+                                        <small class="opacity-50 text-nowrap"><?php print($date_diff->y . ' year ' . $date_diff->m . ' months') ?></small>
+                                    </div>
+                                </a>
+                            </div>
                         <?php } ?>
                     </div>
                 </div>
@@ -106,7 +107,25 @@
     </main>
 </body>
 <script>
+$(document).ready(function() {
+    tech_list = $('.tech-list');
 
+    $('#input-search').on('input', function() {
+        input = $(this);
+        search = input.val().toLowerCase();
+
+        tech_list.find('.tech-item').each(function() {
+            element = $(this);
+            tech_name = element.attr('tech-name').toLowerCase();
+
+            if(tech_name.includes(search)) {
+                element.show();
+            } else {
+                element.hide();
+            }
+        })
+    })
+});
 </script>
 
 </html>
