@@ -19,6 +19,9 @@
 </head>
 
 <body>
+    <div id="overlay">
+        <img src="library/img/loading.svg" style="width: 100px; height: 100px; left: 50%; top: 50%; position: relative;" alt="Loading" />
+    </div>
     <header>
         <div class="px-3 py-2 text-bg-dark">
             <div class="container">
@@ -51,7 +54,7 @@
             </div>
         </div>
     </header>
-    <main>
+    <main class="main-content">
         <?php
         $db = new SQLite3('tech_db.db');
         $results = $db->query('SELECT `icon`, `tech_name`, `start_date`, `link` FROM technologies');
@@ -107,6 +110,12 @@
     </main>
 </body>
 <script>
+$(function() {
+    $("#overlay").fadeOut(500, function() {
+        $(".main-content").fadeIn(500);
+    });
+})
+
 $(document).ready(function() {
     tech_list = $('.tech-list');
 
