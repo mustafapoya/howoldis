@@ -55,17 +55,9 @@
         </div>
     </header>
     <main class="main-content">
-        <?php
-        $db = new SQLite3('tech_db.db');
-        $results = $db->query('SELECT `icon`, `tech_name`, `start_date`, `link` FROM technologies');
-        // while ($row = $results->fetchArray()) {
-        //     print($row['tech_name']);
-        //     print("<br/>");
-        // }
-        ?>
         <div class="container">
             <div class="row" style="margin-top: 20px;">
-            
+
             </div>
         </div>
     </main>
@@ -76,26 +68,6 @@
             $(".main-content").fadeIn(500);
         });
     })
-
-    $(document).ready(function() {
-        tech_list = $('.tech-list');
-
-        $('#input-search').on('input', function() {
-            input = $(this);
-            search = input.val().toLowerCase();
-
-            tech_list.find('.tech-item').each(function() {
-                element = $(this);
-                tech_name = element.attr('tech-name').toLowerCase();
-
-                if (tech_name.includes(search)) {
-                    element.show();
-                } else {
-                    element.hide();
-                }
-            })
-        })
-    });
 </script>
 
 </html>
