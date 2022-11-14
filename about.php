@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>HOW-OLD-IS</title>
-    <?php include('lib.php'); ?>
+    <?php include('master/lib.php'); ?>
 
 </head>
 
@@ -14,7 +15,7 @@
     <div id="overlay">
         <img src="library/img/loading.svg" style="width: 60px; height: 60px; left: 50%; top: 50%; position: relative;" alt="Loading" />
     </div>
-    <?php @include('header.php') ?>
+    <?php @include('master/header.php') ?>
     <main class="main-content">
         <div class="container">
             <div class="row" style="margin-top: 20px;">
