@@ -19,7 +19,30 @@
     <main class="main-content">
         <div class="container">
             <div class="row" style="margin-top: 20px;">
+                <div class="col col-lg-12">
+                    <h3>How Old Is?</h3>
+                    <p>
+                        Sometimes it's difficult to determine the exact date of a project was made publicly available.
+                        Sometimes there is a large gap between the public release and the official launch. If there is 
+                        uncertainty over which date to pick when adding a technology, aim for the earlier of the two.
+                    </p>
+                    <hr>
+                    <h3>Adding Technology</h3>
+                    <p>
+                        This project is developed using <a href="https://www.php.net/" target="_blank"><i class="devicon-php-plain colored"></i>PHP</a> and 
+                        <a href="https://www.sqlite.org/index.html" target="_blank"><i class="devicon-sqlite-plain colored"></i>SQlite</a> database and used 
+                        <a href="https://devicon.dev/" target="_blank"><i class="devicon-devicon-plain colored"></i>devicon</a> library for icons of each technology.
+                        You can use <a href="https://sqlitebrowser.org/" target="_blank">DB-Browser</a> for opening SQlite DB and chaning data.
 
+                    </p>
+                    <hr>
+                    <h3>Contribution</h3>
+                    <p>
+                        If you are interested in making a Contribution, please fork the project and send pull request.
+                    </p>
+                    <hr>
+                    
+                </div>
             </div>
         </div>
     </main>
