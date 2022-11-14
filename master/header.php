@@ -1,3 +1,14 @@
+<?php
+function is_active($current_page) {
+    $url_array = explode('/', $_SERVER['REQUEST_URI']);
+    $url = end($url_array);
+    if($current_page == $url) {
+        echo 'text-white';
+    } else {
+        echo 'text-secondary';
+    }
+}
+?>
 <header>
     <div class="px-3 py-2 text-bg-dark">
         <div class="container">
@@ -8,7 +19,7 @@
                 </a>
                 <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                     <li>
-                        <a href="index.php" class="nav-link text-secondary">
+                        <a href="index.php" class="nav-link <?php is_active('index.php'); ?>">
                             <span class="fa-solid fa-house-user" style="width: 24px; height: 24px;"></span>
                             Home
                         </a>
@@ -20,7 +31,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="about.php" class="nav-link text-white">
+                        <a href="about.php" class="nav-link <?php is_active('about.php'); ?>">
                             <span class="fa-solid fa-info" style="width: 24px; height: 24px;"></span>
                             About
                         </a>
