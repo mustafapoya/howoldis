@@ -35,13 +35,20 @@
                         You can use <a href="https://sqlitebrowser.org/" target="_blank">DB-Browser</a> for opening SQlite DB and chaning data.
 
                     </p>
+                    <h4>We are interested in: </h4>
+                    <ul>
+                        <li>Programming Languages</li>
+                        <li>Programming Languages Frameworks</li>
+                        <li>Programming Languages Tools</li>
+                    </ul>
                     <hr>
                     <h3>Contribution</h3>
                     <p>
                         If you are interested in making a Contribution, please fork the project and send pull request.
+                        All Contributions are welcome, no matter how old a technology is.
                     </p>
                     <hr>
-                    
+
                 </div>
             </div>
         </div>
