@@ -70,6 +70,9 @@
             </div>
         </div>
     </main>
+    <footer>
+        <?php require('master/footer.php'); ?>
+    </footer>
 </body>
 <script>
     $(function() {
